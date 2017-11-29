@@ -1,4 +1,4 @@
-# relax
+# Relax
 
 > Relaxation app inspired by Noisli
 
