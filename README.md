@@ -1,4 +1,4 @@
-# Relax
+# Ony
 
 > Relaxation app inspired by Noisli
 

@@ -2,62 +2,146 @@
 
     <div id="sounds">
 
-        <!-- Grid Bootstrap -->
-        <b-row>
+        <div class="sound" v-for="sound in sounds">
+            <img :src="sound.iconUrl" alt="" class="icon-sound" @click="ifActive(sound)" v-bind:class="{'soundActive': sound.active}">
+            <input type="range" min="0" max="1" step="0.01" class="range-sound" v-show="sound.active" v-model="sound.howler.volume" @input="updateVolume(sound.howler)">
+        </div>
 
-            <!-- First column -->
-            <b-col>
-                <div class="sound">
-                    <img src="../assets/icons-noise/rain.png" alt="" class="icon-sound">
-                    <input type="range" min="0" max="100" class="range-sound">
-                </div>
-
-                <div class="sound">
-                    <img src="../assets/icons-noise/forest.png" alt="" class="icon-sound">
-                    <input type="range" min="0" max="100" class="range-sound">
-                </div>
-            </b-col>
-
-            <!-- Second column -->
-            <b-col>
-                <div class="sound">
-                    <img src="../assets/icons-noise/thunderstorm.png" alt="" class="icon-sound">
-                    <input type="range" min="0" max="100" class="range-sound">
-                </div>
-
-                <div class="sound">
-                    <img src="../assets/icons-noise/wind.png" alt="" class="icon-sound">
-                    <input type="range" min="0" max="100" class="range-sound">
-                </div>
-            </b-col>
-
-        </b-row>
     </div>
 
 </template>
 
 <script>
+
+    import Howler from 'Howler'
+
+    // Import svg
+    import iconFire from '../assets/icons-noise/fire.svg'
+    //import iconStorm from '../assets/icons-noise/storm.svg'
+    //import iconDrizzle from '../assets/icons-noise/drizzle.svg'
+    //import iconMoon from '../assets/icons-noise/moon.svg'
+    import iconWind from '../assets/icons-noise/wind.svg'
+    import iconFlood from '../assets/icons-noise/flood.svg'
+    import iconCave from '../assets/icons-noise/cave.svg'
+    import iconSubmarine from '../assets/icons-noise/submarine.svg'
+    import iconSun from '../assets/icons-noise/sun.svg'
+    import iconTrain from '../assets/icons-noise/train.svg'
+    
+    // Import sounds
+    import soundFire from '../assets/sounds-noise/fire.mp3';
+    import soundWind from '../assets/sounds-noise/wind.mp3';
+    import soundFlood from '../assets/sounds-noise/flood.mp3';
+    import soundCave from '../assets/sounds-noise/cave.mp3';
+    import soundSubmarine from '../assets/sounds-noise/submarine.mp3';
+    import soundSun from '../assets/sounds-noise/sun.mp3';
+    import soundTrain from '../assets/sounds-noise/train.mp3';
+    import soundCicada from '../assets/sounds-noise/sun.mp3';
+
+
     export default {
-        name: 'sounds'
+        name: 'sounds',
+        data () {
+            return {
+                sounds: [
+                    { 
+                        name: 'fire', 
+                        iconUrl: iconFire, 
+                        active: false, 
+                        howler: {
+                            sound: null,
+                            id: undefined,
+                            src: soundFire,
+                            volume: 0.5
+                        }
+                    },
+                    { 
+                        name: 'cave', 
+                        iconUrl: iconCave, 
+                        active: false,
+                        howler: {
+                            sound: null,
+                            id: undefined,
+                            src: soundCave,
+                            volume: 0.5
+                        }
+                    }
+                ]
+            }
+        },
+
+        methods: {
+
+            ifActive: function (element) {
+
+                // Change the opacity of svg
+                element.active = !element.active;
+
+                // Init the player Howler if not exist
+                if (element.howler.sound == null) {
+
+                    element.howler.sound = new Howl({
+                        src: [element.howler.src],
+                        volume: element.howler.volume,
+                        loop: true
+                    })
+                }
+
+                // Play or stop noise if click
+                if (element.active) {
+
+                    element.howler.id = element.howler.sound.play();
+                    console.log('Play');
+
+                } else {
+
+                    element.howler.sound.stop(element.howler.id);
+                    console.log('Stop');
+                }
+            },
+            
+            updateVolume: function (element) {
+                
+                // Update the volume with the new value of sounds.sound.howler.volumn
+                element.sound.volume(element.volume, element.idSound);
+
+                console.log(element);
+
+            }
+        }
     }
 </script>
 
 <style>
+
+    #sounds{
+        display: flex;
+        flex-direction: row;
+        flex-flow: row wrap;
+    }
+
     .sound{
-        width: 200px;
-        margin: auto;
-        margin-bottom: 50px;
+        width: 180px;
+        height: 132px;
+        margin: 0 30px 60px;
+        display: block;
     }
 
     .icon-sound{
-        width: 120px;
+        width: 50%;
         display: block;
-        margin: auto auto 10px;
+        margin: auto;
+        opacity: .5;
+        cursor: pointer;
+    }
+
+    .soundActive{
+        opacity: 1;
     }
 
     .range-sound{
         width: 100%;
-        height: 2px;
+        height: 1px;
+        margin-top: 30px;
 
         -webkit-appearance: none;
         appearance: none;
