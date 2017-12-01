@@ -2,10 +2,10 @@
 
     <div id="sounds">
 
-        <div class="sound" v-for="sound in sounds">
-            <img :src="sound.iconUrl" alt="" class="icon-sound" @click="ifActive(sound)" v-bind:class="{'soundActive': sound.active}">
-            <input type="range" min="0" max="1" step="0.01" class="range-sound" v-show="sound.active" v-model="sound.howler.volume" @input="updateVolume(sound.howler)">
-        </div>
+       <div class="sound" v-for="sound in sounds">
+           <img :src="sound.iconUrl" alt="" class="icon-sound" @click="ifActive(sound)" v-bind:class="{'soundActive': sound.active}">
+           <input type="range" min="0" max="1" step="0.01" class="range-sound" v-show="sound.active" v-model="sound.howler.volume" @input="updateVolume(sound.howler)">
+       </div>
 
     </div>
 
@@ -17,10 +17,7 @@
 
     // Import svg
     import iconFire from '../assets/icons-noise/fire.svg'
-    //import iconStorm from '../assets/icons-noise/storm.svg'
-    //import iconDrizzle from '../assets/icons-noise/drizzle.svg'
-    //import iconMoon from '../assets/icons-noise/moon.svg'
-    import iconWind from '../assets/icons-noise/wind.svg'
+    import iconDrizzle from '../assets/icons-noise/drizzle.svg'
     import iconFlood from '../assets/icons-noise/flood.svg'
     import iconCave from '../assets/icons-noise/cave.svg'
     import iconSubmarine from '../assets/icons-noise/submarine.svg'
@@ -29,14 +26,12 @@
     
     // Import sounds
     import soundFire from '../assets/sounds-noise/fire.mp3';
-    import soundWind from '../assets/sounds-noise/wind.mp3';
+    import soundDrizzle from '../assets/sounds-noise/drizzle.mp3';
     import soundFlood from '../assets/sounds-noise/flood.mp3';
     import soundCave from '../assets/sounds-noise/cave.mp3';
     import soundSubmarine from '../assets/sounds-noise/submarine.mp3';
     import soundSun from '../assets/sounds-noise/sun.mp3';
     import soundTrain from '../assets/sounds-noise/train.mp3';
-    import soundCicada from '../assets/sounds-noise/sun.mp3';
-
 
     export default {
         name: 'sounds',
@@ -55,13 +50,68 @@
                         }
                     },
                     { 
+                        name: 'wind', 
+                        iconUrl: iconDrizzle,
+                        active: false,
+                        howler: {
+                            sound: null,
+                            id: undefined,
+                            src: soundDrizzle,
+                            volume: 0.5
+                        }
+                    },
+                    { 
+                        name: 'flood', 
+                        iconUrl: iconFlood,
+                        active: false,
+                        howler: {
+                            sound: null,
+                            id: undefined,
+                            src: soundFlood,
+                            volume: 0.5
+                        }
+                    },
+                    { 
                         name: 'cave', 
-                        iconUrl: iconCave, 
+                        iconUrl: iconCave,
                         active: false,
                         howler: {
                             sound: null,
                             id: undefined,
                             src: soundCave,
+                            volume: 0.5
+                        }
+                    },
+                    { 
+                        name: 'submarine', 
+                        iconUrl: iconSubmarine,
+                        active: false,
+                        howler: {
+                            sound: null,
+                            id: undefined,
+                            src: soundSubmarine,
+                            volume: 0.5
+                        }
+                    },
+                    { 
+                        name: 'sun', 
+                        iconUrl: iconSun,
+                        active: false,
+                        howler: {
+                            sound: null,
+                            id: undefined,
+                            src: soundSun,
+                            volume: 0.5
+                        }
+                    },
+                    { 
+                        name: 'train', 
+                        iconUrl: iconTrain,
+                        active: false,
+                        howler: {
+                            sound: null,
+                            id: undefined,
+                            src: soundTrain,
                             volume: 0.5
                         }
                     }
@@ -103,9 +153,6 @@
                 
                 // Update the volume with the new value of sounds.sound.howler.volumn
                 element.sound.volume(element.volume, element.idSound);
-
-                console.log(element);
-
             }
         }
     }
@@ -122,7 +169,7 @@
     .sound{
         width: 180px;
         height: 132px;
-        margin: 0 30px 60px;
+        margin: 0 30px 60px 0;
         display: block;
     }
 
