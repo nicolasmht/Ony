@@ -22,8 +22,7 @@
 <script>
 
     // Import Bootstrap
-    import 'bootstrap/dist/css/bootstrap.css'
-    import 'bootstrap-vue/dist/bootstrap-vue.css'
+    import 'bootstrap/dist/css/bootstrap.min.css';
 
     // Import components
     import Sounds from './components/sounds'

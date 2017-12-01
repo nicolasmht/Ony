@@ -1,5 +1,5 @@
 {
-  "name": "relax",
+  "name": "Ony",
   "version": "1.0.0",
   "description": "Relaxation app inspired by Noisli",
   "author": "Nicolas Michot <nicolas.michot@yahoo.com>",
@@ -10,8 +10,9 @@
     "build": "node build/build.js"
   },
   "dependencies": {
-    "flat-ui": "^2.1.1",
-    "vue": "^2.5.2"
+    "bootstrap": "^3.3.7",
+    "howler": "^2.0.5",
+    "vue": "^2.5.9"
   },
   "devDependencies": {
     "autoprefixer": "^7.1.2",
