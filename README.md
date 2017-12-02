@@ -1,6 +1,6 @@
 # Ony
 
-![Previous](https://github.com/captainNico/Ony/README.png "Logo Title Text 1")
+![Previous](https://raw.githubusercontent.com/captainNico/Ony/master/README.png "Logo Title Text 1")
 
 :musical_note: Relaxation application with noise :musical_note:
 
