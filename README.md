@@ -1,21 +1,7 @@
 # Ony
 
-> Relaxation app inspired by Noisli
+![Previous](https://github.com/captainNico/Ony/README.png "Logo Title Text 1")
 
-## Build Setup
+:musical_note: Relaxation application with noise :musical_note:
 
-``` bash
-# install dependencies
-npm install
-
-# serve with hot reload at localhost:8080
-npm run dev
-
-# build for production with minification
-npm run build
-
-# build for production and view the bundle analyzer report
-npm run build --report
-```
-
-For a detailed explanation on how things work, check out the [guide](http://vuejs-templates.github.io/webpack/) and [docs for vue-loader](http://vuejs.github.io/vue-loader).
+Application available on [captainNico.github.io](https://captainnico.github.io/Ony/).
