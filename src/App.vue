@@ -52,7 +52,7 @@
     @import url('https://fonts.googleapis.com/css?family=Roboto:300,400,900');
 
     #app{
-        width: 720px;
+        max-width: 720px;
         margin: auto;
         font-family: 'Roboto', sans-serif;
     }
@@ -60,7 +60,6 @@
     #header{
         padding-top: 30px;
         margin-bottom: 60px;
-        /* background-color: red; */
     }
 
     #logo{

@@ -161,6 +161,7 @@
 <style>
 
     #sounds{
+        
         display: flex;
         flex-direction: row;
         flex-flow: row wrap;
@@ -169,8 +170,7 @@
     .sound{
         width: 180px;
         height: 132px;
-        margin: 0 30px 60px 0;
-        display: block;
+        margin: 0 auto 60px auto;
     }
 
     .icon-sound{
