@@ -1,8 +1,6 @@
 <template>
 
-    <div id="background">
-        
-    </div>
+    <div id="background"></div>
 
 </template>
 
@@ -12,7 +10,7 @@
     }
 </script>
 
-<style>
+<style scoped>
 
     #background{
         position: fixed;

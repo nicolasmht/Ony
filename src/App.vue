@@ -10,7 +10,7 @@
                 <path class="path" id="path" d="M221,146.4c-11.2,26.8-25.4,59-42,65.4-3.8,1.4-7.6,1.4-11.4-4.2-4-6-8-13-4-24.8,6-18,23-30,42.8-37.8,2-4.6,4-9.6,6.2-14.4-6.2,6.4-13.8,11.6-21.8,11-14.4-1.2-14.8-15.8-10.2-29C185,99.8,194.8,80,207.8,62c1.6-2.2,3.6-2,5,0,4.8,6.4,3.6,14.8-3.8,26.6-7.2,11.6-11.6,19.8-15.4,29.2-4,9.8-3.6,16.8,1,17.2,7.8.6,17.8-12.2,28-29.6,8.6-14.8,17.2-32.8,24.2-43,1.8-2.6,3.2-3,5-1.4,2.8,3.6,4.4,12.2-.8,22.4-6,11.6-18.2,35.6-26.6,55a106.48,106.48,0,0,0,35.4-30.8c1-1.4,2.8-1.6,3.2.4.4,1.8-.2,6.4-3.6,11.6C251.6,132,237.6,139.6,221,146.4Zm-49.4,54.4c2.6,3.8,19-18,31.4-47.4C177,168.4,168,195.8,171.6,200.8Z"/>
             </svg>
             
-            <h2 id="title">Click on an icon and open your ears !</h2>
+            <!-- <h2 id="title">Click on an icon and open your ears !</h2> -->
 
         </header>
 
@@ -74,21 +74,17 @@
         stroke-width: 3;
         stroke: #fff;
         fill: transparent;
-        stroke-dasharray: 1000;
-        stroke-dashoffset: 1000;
-        stroke-linecap: round;
-        -webkit-text-stroke: 0.150em #d9a3ff;
-        animation: path 5s linear forwards;
+        /*animation: path 5s linear forwards;*/
     }
 
-    .path:nth-of-type(1){ animation-delay: 0s; }
+    /*.path:nth-of-type(1){ animation-delay: 0s; }
     .path:nth-of-type(2){ animation-delay: 1.7s; }
-    .path:nth-of-type(3){ animation-delay: 4.3s; }
+    .path:nth-of-type(3){ animation-delay: 4.3s; }*/
 
-    @keyframes path {
+    /*@keyframes path {
         0%{ stroke-dashoffset: 1000; }
         100%{ stroke-dashoffset: 0;}
-    }
+    }*/
 
     #title{
         margin: 0;
